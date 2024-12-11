@@ -9,133 +9,95 @@ Respuesta: CREATE DATABASE NombreApellido
 ____________________________________________________________
 II - Necesito crear 13 tablas(Estos ítems debe estar en el TXT):
 1. Deberás crear la tabla Clientes (Clientes), que contendrá los datos de los Clientes. Campos:
-1.
-IdCliente: tipo int, no admite nulos, identity, y es Primary Key
-2.
-Nombre: tipo varchar(50), no admite nulos
-3.
-Apellido: tipo varchar(50), no admite nulos
-4.
-Fnacimiento: tipo date, no admite nulos
-5.
-Domicilio: tipo varchar(50), no admite nulos
-6.
-idPais: tipo char(3), no admite nulos
-7.
-Telefono: tipo varchar(12), admite nulos
-8.
-Email: tipo varchar(30), no admite nulos
-9.
-Observaciones: tipo varchar(1000), admite nulos
-10.
-FechaAlta: tipo datetime, no admite nulos
+   
+1.IdCliente: tipo int, no admite nulos, identity, y es Primary Key
+2.Nombre: tipo varchar(50), no admite nulos
+3.Apellido: tipo varchar(50), no admite nulos
+4.Fnacimiento: tipo date, no admite nulos
+5.Domicilio: tipo varchar(50), no admite nulos
+6.idPais: tipo char(3), no admite nulos
+7.Telefono: tipo varchar(12), admite nulos
+8.Email: tipo varchar(30), no admite nulos
+9.Observaciones: tipo varchar(1000), admite nulos
+10.FechaAlta: tipo datetime, no admite nulos
+   
 2. Deberás construir la tabla de hechos llamada Record (Record), que contendrá el historial de campañas. Campos:
-1.
-IdRecord: tipo int, no admite nulos, identity, y es Primary Key
-2.
-FechaRecord: tipo date, no admite nulos
-3.
-Observaciones: tipo varchar(1000), admite nulos
+   
+1.IdRecord: tipo int, no admite nulos, identity, y es Primary Key
+2.FechaRecord: tipo date, no admite nulos
+3.Observaciones: tipo varchar(1000), admite nulos
+
 3. Deberás definir la tabla de hechos Record Cliente (RecordCliente), que contendrá el historial de campañas por las que ha pasado el cliente. Relación Historia Cliente Campaña, esta tabla debe contener una Primary Key compuesta por los tres campos. Campos:
-1.
-idRecord: tipo int, no admite nulos
-2.
-IdCliente: tipo int, no admite nulos
-3.
-IdCampania: tipo int, no admite nulos
+   
+1.idRecord: tipo int, no admite nulos
+2.IdCliente: tipo int, no admite nulos
+3.IdCampania: tipo int, no admite nulos
+
 Cuando veas una instrucción como esta, recuerda que el nombre que debes usar en tu tabla es el que está entre paréntesis.
 4. Deberás hacer la tabla País (Pais), que contendrá los países de origen de los Clientes. Campos:
-1.
-IdPais: tipo char(3), no admite nulos, y es Primary Key
-2.
-NombrePais: tipo varchar(100), no admite nulos
+1.IdPais: tipo char(3), no admite nulos, y es Primary Key
+2.NombrePais: tipo varchar(100), no admite nulos
+
 5. Deberás crear la tabla Horario Captación Campaña (HoraCaptacion), que contendrá la hora en la cual los clientes se registraron en las campañas. Campos:
-1.
-idHCaptacion: tipo int, no admite nulos, identity, y es Primary Key
-2.
-FechaCaptacion: tipo date, no admite nulos
-3.
-EstadoCaptacion: tipo smallint, no admite nulos
-4.
-Observaciones: tipo varchar(1000), admite nulos
-6. Deberás generar la tabla Horario Captación Campaña Cliente (HoraCapClienteCampania), que contendrá la hora en la cual se registraron en las campañas los Clientes. Esta tabla debe contener una Primary Key compuesta por los tres campos.
+1.idHCaptacion: tipo int, no admite nulos, identity, y es Primary Key
+2.FechaCaptacion: tipo date, no admite nulos
+3.EstadoCaptacion: tipo smallint, no admite nulos
+4.Observaciones: tipo varchar(1000), admite nulos
+
+7. Deberás generar la tabla Horario Captación Campaña Cliente (HoraCapClienteCampania), que contendrá la hora en la cual se registraron en las campañas los Clientes. Esta tabla debe contener una Primary Key compuesta por los tres campos.
 Campos:
-1.
-idHCaptacion: tipo int, no admite nulos, y es Primary Key
-2.
-idCliente: tipo int, no admite nulos, y es Primary Key
-3.
-idCampania: tipo int, no admite nulos, y es Primary Key
+1.idHCaptacion: tipo int, no admite nulos, y es Primary Key
+2.idCliente: tipo int, no admite nulos, y es Primary Key
+3.idCampania: tipo int, no admite nulos, y es Primary Key
+
 7. Deberás definir la tabla Horario Estado (HorarioEstado), que contendrá la dimensión del horario con la descripción de un estado. Campos:
-1.
-IdEstado: tipo smallint, no admite nulos, identity, y es Primary Key
-2.
-Descripcion: tipo varchar(50), no admite nulos
-8. Deberás crear la tabla Producto (Producto), que contendrá Los productos asociados a las campañas. Campos:
+1.IdEstado: tipo smallint, no admite nulos, identity, y es Primary Key
+2.Descripcion: tipo varchar(50), no admite nulos
+
+9. Deberás crear la tabla Producto (Producto), que contendrá Los productos asociados a las campañas. Campos:
 1. IdProducto: tipo int, no admite nulos, identity, y es Primary Key
 2. Producto: tipo varchar(100), no admite nulos
+3. 
 9. Deberás construir la tabla Compras (Compra), que contendrá las compras en dinero que han realizado los clientes. Campos:
-1.
-IdCompras: tipo int, no admite nulos, identity, y es Primary Key
-2.
-Concepto: tipo int y no admite nulos
-3.
-Fecha (de la compra): tipo datetime y no admite nulos
-4.
-Monto: tipo money y no admite nulos
-5.
-Observaciones: tipo varchar(1000) y admite nulos
-10. Deberás construir la tabla ComprasCliente (CompraCliente), que conectará a las compras con los clientes y su captación. La Primary Key de esta tabla estará compuesta por los tres campos. Campos:
-1.
-IdCompras: tipo int, no admite nulos
-2.
-IdCliente: tipo int , no admite nulos
-3.
-idHCaptacion: tipo int , no admite nulos
+1.IdCompras: tipo int, no admite nulos, identity, y es Primary Key
+2.Concepto: tipo int y no admite nulos
+3.Fecha (de la compra): tipo datetime y no admite nulos
+4.Monto: tipo money y no admite nulos
+5.Observaciones: tipo varchar(1000) y admite nulos
+
+11. Deberás construir la tabla ComprasCliente (CompraCliente), que conectará a las compras con los clientes y su captación. La Primary Key de esta tabla estará compuesta por los tres campos. Campos:
+1.IdCompras: tipo int, no admite nulos
+2.IdCliente: tipo int , no admite nulos
+3.idHCaptacion: tipo int , no admite nulos
+
 11. Deberás construir la tabla Campaña (Campania), que contendrá la dimensión de Campañas que han realizado los clientes. Campos:
-1.
-IdCampania: tipo int, no admite nulos, identity, y es Primary Key
-2.
-NombreCampaña: tipo varchar(50), no admite nulos
-12. Deberás construir la tabla Campaña Producto (CampaniaProducto), que contendrá las relaciones entre las Campañas y los productos. Campos:
-1.
-IdCampania: tipo int, identity, no admite nulos, y es Primary Key
+1.IdCampania: tipo int, no admite nulos, identity, y es Primary Key
+2.NombreCampaña: tipo varchar(50), no admite nulos
+
+13. Deberás construir la tabla Campaña Producto (CampaniaProducto), que contendrá las relaciones entre las Campañas y los productos. Campos:
+1.IdCampania: tipo int, identity, no admite nulos, y es Primary Key
 2. IdProducto: tipo int, no admite nulos, y es Primary Key
-3.
-Descripcion: tipo varchar (100), no admite nulos
+3.Descripcion: tipo varchar (100), no admite nulos
+
 13. Deberás construir la tabla Concepto de compra (ConceptoCompra), que contendrá la dimensión de conceptos de compra. Campos:
-1.
-IdConcepto: tipo int, identity, no admite nulos, y es Primary Key
-2.
-Concepto: tipo varchar(100), no admite nulos
+1.IdConcepto: tipo int, identity, no admite nulos, y es Primary Key
+2.Concepto: tipo varchar(100), no admite nulos
 ____________________________________________________________
 III - Necesito relacionar las 13 tablas de la siguiente forma (Estos ítems NO debe estar en el TXT):
-1.
-Cliente con País a través del IdPais
-2.
-ConceptoCompra con Compra a través de IdConcepto y Concepto
-3.
-HorarioEstado con HoraCaptacion a través de IdEstado y EstadoCaptacion
-4.
-Compra con CompraCliente a través de IdCompra
-5.
-Cliente con CompraCliente a través de IdCliente
-6.
-HoraCapClienteCampania con HoraCaptacion a través de IdHCaptacion
-7.
-HoraCapClienteCampania con Cliente a través de IdCliente
-8.
-HoraCapClienteCampania con Campania a través de IdCampania
-9.
-CampaniaProducto con Producto a través de IdProducto
-10.
-CampaniaProducto con Campania a través de IdCampania
-11.
-Record con RecordCliente a través de IdRecord
-12.
-RecordCliente con Cliente a través de IdCliente
-13.
-RecordCliente con Campania a través de IdCampania
+1.Cliente con País a través del IdPais
+2.ConceptoCompra con Compra a través de IdConcepto y Concepto
+3.HorarioEstado con HoraCaptacion a través de IdEstado y EstadoCaptacion
+4.Compra con CompraCliente a través de IdCompra
+5.Cliente con CompraCliente a través de IdCliente
+6.HoraCapClienteCampania con HoraCaptacion a través de IdHCaptacion
+7.HoraCapClienteCampania con Cliente a través de IdCliente
+8.HoraCapClienteCampania con Campania a través de IdCampania
+9.CampaniaProducto con Producto a través de IdProducto
+10.CampaniaProducto con Campania a través de IdCampania
+11.Record con RecordCliente a través de IdRecord
+12.RecordCliente con Cliente a través de IdCliente
+13.RecordCliente con Campania a través de IdCampania
+
 IV- Inserta registros
 A - Creación de tablas para la BBDD (Este ítem NO debe estar en el TXT)
 Insertar Registros, lo puedes hacer de la forma que tú prefieras
